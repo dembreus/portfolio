@@ -1,0 +1,42 @@
+<!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button
+      *ngFor="let slide of slides; first as isFirst"
+      type="button"
+      [attr.data-bs-target]="'#slide-' + slide.id"
+      [attr.data-bs-slide-to]="slide.id"
+      [ngClass]="isFirst ? 'active' : ''"
+    ></button>
+  </div>
+
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner" *ngFor="let slide of slides; first as isFirst">
+    <div [ngClass]="isFirst ? 'carousel-item active' : 'carousel-item'">
+      <img
+        src="{{ slide.imageUrl }}"
+        alt="Slide-{{ slide.id }}"
+        class="d-block w-100"
+      />
+    </div>
+  </div>
+
+  <!-- Left and right controls/icons -->
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#demo"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#demo"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
