@@ -22,6 +22,7 @@
               "replaceDuplicatePlugins": true
             },
             "outputPath": "dist/portfolio-app",
+            "deleteOutputPath": true,
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -41,10 +42,11 @@
             "production": {
               "buildOptimizer": true,
               "optimization": true,
-              "vendorChunk": true,
-              "extractLicenses": false,
+              "vendorChunk": false,
+              "extractLicenses": true,
               "sourceMap": false,
-              "namedChunks": true,
+              "namedChunks": false,
+              "aot": true,
               "budgets": [
                 {
                   "type": "initial",
