@@ -1,0 +1,48 @@
+body {
+  --text-color: #222;
+  --bkg-color: #fff;
+
+  &.dark-theme {
+    --text-color: #eee;
+    --bkg-color: #121212;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --text-color: #eee;
+    --bkg-color: #121212;
+    &.light-theme {
+      --text-color: #222;
+      --bkg-color: #fff;
+    }
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--bkg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
