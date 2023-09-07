@@ -8,9 +8,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ExpertiseComponent } from './pages/expertise/expertise.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ExpertiseComponent, ProjectsComponent],
+  declarations: [AppComponent, HomeComponent, ExpertiseComponent, ProjectsComponent, NavigationComponent],
   imports: [BrowserModule, AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', {
   enabled: environment.production,
   // Register the ServiceWorker as soon as the application is stable
