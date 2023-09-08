@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SoftwareProjectModule } from 'src/app/features/software-project/software-project.module';
 import { ProjectsComponent } from './projects.component';
 import { ProjectsRoutingModule } from './projects-routing.module';
+import { SoftwareProjectComponent } from 'src/app/features/software-project/software-project.component';
 
 @NgModule({
-  declarations: [ProjectsComponent],
-  imports: [CommonModule, ProjectsRoutingModule, SoftwareProjectModule],
+  declarations: [ProjectsComponent, SoftwareProjectComponent],
+  imports: [CommonModule, ProjectsRoutingModule],
 })
 export class ProjectsModule {}

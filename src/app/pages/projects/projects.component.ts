@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { SoftwareProject } from 'src/app/features/software-project/software-project';
 
 @Component({
@@ -28,7 +29,18 @@ export class ProjectsComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(private metaTagService: Meta) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.metaTagService.addTags([
+      {
+        name: 'description',
+        content: "Dillon Embreus's Projects.",
+      },
+      {
+        name: 'keywords',
+        content: 'Dillon Embreus, Embreus, Projects',
+      },
+    ]);
+  }
 }

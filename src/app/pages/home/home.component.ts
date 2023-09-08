@@ -7,10 +7,10 @@ import { Title, Meta } from '@angular/platform-browser';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private metaTageService: Meta) {}
+  constructor(private metaTagService: Meta) {}
 
   ngOnInit(): void {
-    this.metaTageService.addTags([
+    this.metaTagService.addTags([
       {
         name: 'description',
         content: "Dillon Embreus's Portfolio.",

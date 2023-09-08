@@ -8,8 +8,15 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  {
+    path: 'projects',
+    loadChildren: () =>
+      import('./pages/projects/projects.module').then(
+        (module) => module.ProjectsModule
+      ),
+  },
   { path: 'expertise', component: ExpertiseComponent },
-  { path: 'projects', component: ProjectsComponent },
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({

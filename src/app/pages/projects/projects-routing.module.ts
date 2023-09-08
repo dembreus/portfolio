@@ -8,17 +8,18 @@ const routes: Routes = [
   {
     path: '',
     component: ProjectsComponent,
-    children: [
-      {
-        path: ':id',
-        component: SoftwareProjectComponent,
-      },
-    ],
   },
+  // {
+  //   path: ':id',
+  //   loadChildren: () =>
+  //     import('../../features/software-project/software-project.module').then(
+  //       (module) => module.SoftwareProjectModule
+  //     ),
+  // },
 ];
 
 @NgModule({
-  imports: [BrowserModule, RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class ProjectsRoutingModule {}
