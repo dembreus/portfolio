@@ -1,6 +1,9 @@
 <nav class="nav-bar">
-  <ul class="nav-bar__routes" *ngFor="let route of routes">
-    <li>
+  <a [routerLink]="routes[0].href" class="nav-bar__link">{{
+    routes[0].name
+  }}</a>
+  <ul class="nav-bar__routes">
+    <li *ngFor="let route of routes | slice : 1">
       <a [routerLink]="route.href" class="nav-bar__link">{{ route.name }}</a>
     </li>
   </ul>

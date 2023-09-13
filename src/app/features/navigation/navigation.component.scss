@@ -1,0 +1,33 @@
+.nav-bar {
+  align-self: stretch;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link:hover {
+    background-color: #333;
+  }
+
+  &__routes {
+    list-style: none;
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #efefef;
+    display: block;
+    padding: 1.5rem 3rem;
+  }
+}

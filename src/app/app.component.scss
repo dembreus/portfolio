@@ -46,3 +46,12 @@ body {
   color: var(--text-color);
   min-height: 100vh;
 }
+
+.header{
+  font-size: 1.4rem;
+  height: 7rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
