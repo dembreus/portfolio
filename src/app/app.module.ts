@@ -1,22 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppRoutingModule } from './app-routing.module';
-import { ProjectsModule } from './pages/projects/projects.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { ExpertiseComponent } from './pages/expertise/expertise.component';
-import { ProjectsComponent } from './pages/projects/projects.component';
 import { NavigationComponent } from './features/navigation/navigation.component';
+
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ExpertiseComponent,
     NavigationComponent,
   ],
   imports: [
