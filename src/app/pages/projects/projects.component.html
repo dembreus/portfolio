@@ -1,7 +1,42 @@
-<div class="projects" *ngFor="let project of projects">
-  <app-software-project
-    class="project"
-    [project]="project"
-  ></app-software-project>
+<div class="projects" *ngFor="let project of projects; index as i">
+  <div class="project-card">
+    <picture class="project-card__picture">
+      <source
+        media="(max-width = 599.99px)"
+        srcset="{{ project.referenceImage }}"
+      />
+      <source
+        media="(min-width: 600px)"
+        srcset="{{ project.referenceImage }}"
+      />
+      <img
+        *ngIf="i === 0; else lowPriority"
+        fetchpriority="high"
+        class="project-card__img"
+        src="{{ project.referenceImage }}"
+        alt="{{ project.title }}"
+      />
+      <ng-template #lowPriority>
+        <img
+          fetchpriority="low"
+          class="project-card__img"
+          src="{{ project.referenceImage }}"
+          alt="{{ project.title }}"
+        />
+      </ng-template>
+    </picture>
+    <div class="project-card__title">{{ project.title }}</div>
+    <div class="description-section">
+      <div class="project-card__description">{{ project.description }}</div>
+      <button class="project-card__btn">
+        <a
+          target="_blank"
+          href="{{ project.referenceUrl }}"
+          class="project-card__link"
+          >View source code</a
+        >
+      </button>
+    </div>
+  </div>
 </div>
 <router-outlet></router-outlet>

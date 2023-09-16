@@ -10,22 +10,27 @@ import { SoftwareProject } from 'src/app/features/software-project/software-proj
 export class ProjectsComponent implements OnInit {
   projects: Array<SoftwareProject> = [
     {
-      title: 'project 1',
-      description: 'project 1 description',
+      title: 'Injectable Menu',
+      description:
+        'Create your own menu and inject it into your personal website. Automatically adjusts for mobile experience and personal branding.',
       referenceUrl: 'https://github.com/dembreus/portfolio',
-      referenceImage: '#project-1-image',
+      referenceImage:
+        'https://images.unsplash.com/photo-1515697320591-f3eb3566bc3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3774&q=80',
     },
     {
-      title: 'project 2',
-      description: 'project 2 description',
+      title: 'Skateboard App',
+      description:
+        'Find Skatespots in your aread. Upload photos, available time ranges, descriptions and location.',
       referenceUrl: 'https://github.com/dembreus/portfolio',
-      referenceImage: '#project-2-image',
+      referenceImage:
+        'https://images.unsplash.com/photo-1531565637446-32307b194362?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3852&q=80',
     },
     {
-      title: 'project 3',
-      description: 'project 3 description',
+      title: 'Trillo',
+      description: 'UI design site for a hotel website',
       referenceUrl: 'https://github.com/dembreus/portfolio',
-      referenceImage: '#project-3-image',
+      referenceImage:
+        'https://images.unsplash.com/photo-1688401561247-028153a25fe5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3774&q=80',
     },
   ];
 

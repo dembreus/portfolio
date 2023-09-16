@@ -11,11 +11,7 @@ import { NavigationComponent } from './features/navigation/navigation.component'
 import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    NavigationComponent,
-  ],
+  declarations: [AppComponent, HomeComponent, NavigationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

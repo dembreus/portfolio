@@ -47,11 +47,24 @@ body {
   min-height: 100vh;
 }
 
-.header{
+.header {
   font-size: 1.4rem;
   height: 7rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+button {
+  border: none;
+  background-color: plum;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
 }

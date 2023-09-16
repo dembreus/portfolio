@@ -1,0 +1,46 @@
+.projects {
+  display: flex;
+  flex-flow: row wrap;
+
+  .project-card {
+    border: 1px solid red;
+    width: 30%;
+
+    &__img {
+      height: 15rem;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &__title {
+      font-size: 2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    &__description {
+    }
+
+    &__btn {
+      font-size: 0.8rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      text-align: center;
+      border: none;
+      border-radius: 0.4rem;
+    }
+
+    &__link:link,
+    &__link:visited {
+      text-decoration: none;
+      text-transform: uppercase;
+      display: block;
+      padding: 0.2rem 0.4rem;
+    }
+
+    description-section {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
