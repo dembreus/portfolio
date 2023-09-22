@@ -1,10 +1,18 @@
+$blue: #0ff;
+$pink: #f0f;
+$glow-shadow-blue: inset 0 0 50px white, inset 5px 0 20px $pink,
+  inset -5px 0 20px $blue, inset 10px 0 300px $pink, inset -10px 0 300px $blue,
+  0 0 50px white, -5px 0 20px $pink, 5px 0 20px $blue;
+
 .projects {
   display: flex;
-  flex-flow: row wrap;
 
   .project-card {
-    border: 1px solid red;
-    width: 30%;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    width: 33.3333%;
+    margin: 1.5rem 1rem;
+    box-shadow: $glow-shadow-blue;
 
     &__img {
       height: 15rem;

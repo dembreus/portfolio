@@ -1,30 +1,32 @@
-<div class="projects" *ngFor="let project of projects; index as i">
-  <div class="project-card">
-    <picture class="project-card__picture">
-      <source
-        media="(max-width = 599.99px)"
-        srcset="{{ project.referenceImage }}"
-      />
-      <source
-        media="(min-width: 600px)"
-        srcset="{{ project.referenceImage }}"
-      />
-      <img
-        *ngIf="i === 0; else lowPriority"
-        fetchpriority="high"
-        class="project-card__img"
-        src="{{ project.referenceImage }}"
-        alt="{{ project.title }}"
-      />
-      <ng-template #lowPriority>
+<div class="projects">
+  <div class="project-card" *ngFor="let project of projects; index as i">
+    <figure>
+      <picture class="project-card__picture">
+        <source
+          media="(max-width = 599.99px)"
+          srcset="{{ project.referenceImage }}"
+        />
+        <source
+          media="(min-width: 600px)"
+          srcset="{{ project.referenceImage }}"
+        />
         <img
-          fetchpriority="low"
+          *ngIf="i === 0; else lowPriority"
+          fetchpriority="high"
           class="project-card__img"
           src="{{ project.referenceImage }}"
           alt="{{ project.title }}"
         />
-      </ng-template>
-    </picture>
+        <ng-template #lowPriority>
+          <img
+            fetchpriority="low"
+            class="project-card__img"
+            src="{{ project.referenceImage }}"
+            alt="{{ project.title }}"
+          />
+        </ng-template>
+      </picture>
+    </figure>
     <div class="project-card__title">{{ project.title }}</div>
     <div class="description-section">
       <div class="project-card__description">{{ project.description }}</div>
