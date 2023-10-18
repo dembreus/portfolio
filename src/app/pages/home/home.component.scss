@@ -1,0 +1,16 @@
+.home {
+  .banner,
+  .about {
+    &__img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .featured-project {
+    &__img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

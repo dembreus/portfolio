@@ -1,24 +1,114 @@
-<section class="banner__section">TODO: PLACE IMAGE HERE</section>
-<section class="featured__section">TODO: PLACE FEATURED PROJECTS HERE</section>
-<section class="contact__section">
-  <div class="links">
-    <div class="links__linkedIn">
-      <a
-        href="https://www.linkedin.com/in/dillon-embreus-7691a2166/"
-        target="_blank"
-        title="Linkedin"
-        ><i class="fa-brands fa-linkedin-in"></i
-      ></a>
-      <a href="https://github.com/dembreus/" target="_blank" title="Github"
-        ><i class="fa-brands fa-github"></i
-      ></a>
-      <a href="#" target="_blank" title="Facebook"
-        ><i class="fa-brands fa-facebook"></i
-      ></a>
-
-      <a href="mailto:dillon.embreus+contactme@protonmail.com" title="Email"
-        ><i class="fa-solid fa-envelope"></i
-      ></a>
+<div class="home">
+  <section class="banner__section">
+    <figure>
+      <picture class="banner__picture">
+        <source
+          media="(max-width = 599.99px)"
+          srcset="..\..\assets\temp\banner-dark.jpg"
+        />
+        <source
+          media="(min-width: 600px)"
+          srcset="..\..\assets\temp\banner-dark.jpg"
+        />
+        <img
+          fetchpriority="high"
+          class="banner__img"
+          src="..\..\assets\temp\banner-dark.jpg"
+          alt="banner"
+        />
+      </picture>
+    </figure>
+  </section>
+  <section class="featured__section">
+    <div class="featured-projects">
+      <div
+        class="featured-project"
+        *ngFor="let project of projects; index as i"
+      >
+        <figure>
+          <picture class="featured-project__picture">
+            <source
+              media="(max-width = 599.99px)"
+              srcset="{{ project.referenceImage }}"
+            />
+            <source
+              media="(min-width: 600px)"
+              srcset="{{ project.referenceImage }}"
+            />
+            <img
+              *ngIf="i === 0; else lowPriority"
+              fetchpriority="high"
+              class="featured-project__img"
+              src="{{ project.referenceImage }}"
+              alt="{{ project.title }}"
+            />
+            <ng-template #lowPriority>
+              <img
+                fetchpriority="low"
+                class="featured-project__img"
+                src="{{ project.referenceImage }}"
+                alt="{{ project.title }}"
+              />
+            </ng-template>
+          </picture>
+        </figure>
+        <div class="featured-project__title">{{ project.title }}</div>
+        <div class="description-section">
+          <div class="featured-project__description">
+            {{ project.description }}
+          </div>
+          <button class="featured-project__btn">
+            <a
+              target="_blank"
+              href="{{ project.referenceUrl }}"
+              class="featured-project__link"
+              >View source code</a
+            >
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  <section class="contact__section">
+    <div class="links">
+      <div class="links__linkedIn">
+        <a
+          href="https://www.linkedin.com/in/dillon-embreus-7691a2166/"
+          target="_blank"
+          title="Linkedin"
+          ><i class="fa-brands fa-linkedin-in"></i
+        ></a>
+        <a href="https://github.com/dembreus/" target="_blank" title="Github"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a href="#" target="_blank" title="Facebook"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+
+        <a href="mailto:dillon.embreus+contactme@protonmail.com" title="Email"
+          ><i class="fa-solid fa-envelope"></i
+        ></a>
+      </div>
+    </div>
+  </section>
+  <section class="about__section">
+    <figure>
+      <picture class="about__picture">
+        <source
+          media="(max-width = 599.99px)"
+          srcset="..\..\assets\temp\white-dog-portrait.jpg"
+        />
+        <source
+          media="(min-width: 600px)"
+          srcset="..\..\assets\temp\white-dog-portrait.jpg"
+        />
+        <img
+          fetchpriority="high"
+          class="about__img"
+          src="..\..\assets\temp\white-dog-portrait.jpg"
+          alt="about"
+        />
+      </picture>
+    </figure>
+  </section>
+</div>
