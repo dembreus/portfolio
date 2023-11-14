@@ -4,11 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
 
   & > * {
-    padding: 0 2rem;
-    cursor: pointer;
     height: 100%;
     display: flex;
     align-items: center;
@@ -27,7 +24,6 @@
     text-decoration: none;
     text-transform: uppercase;
     color: #efefef;
-    display: block;
     padding: 1.5rem 3rem;
   }
 }

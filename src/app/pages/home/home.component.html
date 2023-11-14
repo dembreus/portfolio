@@ -19,7 +19,7 @@
       </picture>
     </figure>
   </section>
-  <section class="featured__section">
+  <!-- <section class="featured__section">
     <div class="featured-projects">
       <div
         class="featured-project"
@@ -68,7 +68,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <section class="contact__section">
     <div class="links">
       <div class="links__linkedIn">
@@ -91,7 +91,7 @@
       </div>
     </div>
   </section>
-  <section class="about__section">
+  <!-- <section class="about__section">
     <figure>
       <picture class="about__picture">
         <source
@@ -110,5 +110,123 @@
         />
       </picture>
     </figure>
-  </section>
+  </section> -->
+</div>
+<!-- <div class="feature-container">
+  <figure class="block">
+    <picture class="content">
+      <h2>Jane Doe</h2>
+      <span>UI & UX Designer</span>
+    </picture>
+  </figure>
+  <figure class="block">
+    <picture class="content">
+      <h2>Alex Smith</h2>
+      <span>CEO Expert</span>
+    </picture>
+  </figure>
+  <figure class="block">
+    <picture class="content">
+      <h2>Emily New</h2>
+      <span>Web Designer</span>
+    </picture>
+  </figure>
+  <figure class="block">
+    <picture class="content">
+      <h2>Lisa Boley</h2>
+      <span>Marketing Coordinator</span>
+    </picture>
+  </figure>
+</div>
+
+<div class="fig-caption-demo">
+  <figure class="image-block" *ngFor="let project of projects; index as i">
+    <h1>The Beach</h1>
+    <picture class="featured-project__picture">
+      <source
+        media="(max-width = 599.99px)"
+        srcset="{{ project.referenceImage }}"
+      />
+      <source
+        media="(min-width: 600px)"
+        srcset="{{ project.referenceImage }}"
+      />
+      <img
+        *ngIf="i === 0; else lowPriority"
+        fetchpriority="high"
+        class="featured-project__img"
+        src="{{ project.referenceImage }}"
+        alt="{{ project.title }}"
+      />
+      <ng-template #lowPriority>
+        <img
+          fetchpriority="low"
+          class="featured-project__img"
+          src="{{ project.referenceImage }}"
+          alt="{{ project.title }}"
+        />
+      </ng-template>
+    </picture>
+    <figcaption>
+      <h3>More Info</h3>
+      <p>
+        {{ project.description }}
+      </p>
+      <a
+        target="_blank"
+        href="{{ project.referenceUrl }}"
+        class="featured-project__link"
+      >
+        <button class="featured-project__btn">View source code</button>
+      </a>
+    </figcaption>
+  </figure>
+</div>
+ -->
+<div class="hover-card__section">
+  <div class="featured-project" *ngFor="let project of projects; index as i">
+    <a href="#" class="hover-card">
+      <figure>
+        <div class="date">
+          <span class="card-date-day">20</span
+          ><span class="card-date-month">APR</span>
+        </div>
+
+        <picture class="featured-project__picture">
+          <source
+            media="(max-width = 599.99px)"
+            srcset="{{ project.referenceImage }}"
+          />
+          <source
+            media="(min-width: 600px)"
+            srcset="{{ project.referenceImage }}"
+          />
+          <img
+            *ngIf="i === 0; else lowPriority"
+            fetchpriority="high"
+            class="featured-project__img"
+            src="{{ project.referenceImage }}"
+            alt="{{ project.title }}"
+          />
+          <ng-template #lowPriority>
+            <img
+              fetchpriority="low"
+              class="featured-project__img"
+              src="{{ project.referenceImage }}"
+              alt="{{ project.title }}"
+            />
+          </ng-template>
+        </picture>
+
+        <figcaption>
+          <h4>
+            <span>{{ project.title }}</span>
+          </h4>
+          <p>
+            {{ project.description }}
+          </p>
+        </figcaption>
+      </figure></a
+    >
+  </div>
 </div>
