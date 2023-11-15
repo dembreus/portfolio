@@ -1,54 +1,160 @@
-$blue: #0ff;
-$pink: #f0f;
-$glow-shadow-blue: inset 0 0 20px white, inset 5px 0 20px $pink,
-  inset -5px 0 20px $blue, inset 10px 0 300px $pink, inset -10px 0 300px $blue,
-  0 0 50px white, -5px 0 20px $pink, 5px 0 20px $blue;
+$font-monospace: "Source Code Pro", sans-serif;
+$font-sans: "Source Code Pro", monospace;
+$font-awesome: "Font Awesome 5 Free";
+
+$base-duration: 250ms;
+
+// Colors
+$primary: #f1c40f;
+$accent: #46627f;
+$white: whitesmoke;
+
+$max-width: 1200px;
+// Breakpoints
+$sm: 20rem;
+$med: 48rem;
+$lg: 64rem;
 
 .projects {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 
-  .project-card {
-    border-radius: 0.4rem;
-    overflow: hidden;
-    width: 33.3333%;
-    margin: 1.5rem 1rem;
-    box-shadow: $glow-shadow-blue;
+  .project {
+    margin: 0 0.5rem 1rem 0.5rem;
 
-    &__img {
-      height: 15rem;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    &__title {
-      font-size: 2rem;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    &__description {
-    }
-
-    &__btn {
-      font-size: 0.8rem;
-      font-weight: 300;
-      text-transform: uppercase;
-      text-align: center;
-      border: none;
-      border-radius: 0.4rem;
-    }
-
-    &__link:link,
-    &__link:visited {
+    &__card {
       text-decoration: none;
-      text-transform: uppercase;
-      display: block;
-      padding: 0.2rem 0.4rem;
     }
 
-    description-section {
+    &__figure {
+      position: relative;
       display: flex;
-      justify-content: space-between;
+      align-items: flex-start;
+      justify-content: center;
+      width: 30rem;
+      height: 45rem;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 1.4rem 2.8rem rgba(0, 0, 0, 0.25),
+        0 1rem 1rem rgba(0, 0, 0, 0.22);
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      overflow: hidden;
+
+      &:before,
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        //font-family: $font-awesome;
+      }
+
+      &:before {
+        content: "";
+        background-color: rgba(black, 0.1);
+        z-index: 0;
+      }
+
+      &:after {
+        content: "";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        overflow: hidden;
+      }
+
+      &:hover {
+        .project__img {
+          transform: scale(1.75);
+        }
+
+        &:after {
+          content: "";
+          background-color: rgba($primary, 0.9);
+          color: white;
+          font-size: 7.2rem;
+          z-index: 2;
+        }
+
+        .date {
+          bottom: -6rem;
+          position: absolute;
+        }
+
+        .project__caption {
+          transform: translateY(-200%);
+        }
+      }
+
+      .project__picture {
+        display: flex;
+        justify-content: center;
+      }
+
+      .project__img {
+        max-width: 120%;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      .date {
+        position: absolute;
+        bottom: 0;
+        right: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: rgba($primary, 0.8);
+        text-shadow: 1px 1px rgba(black, 0.7);
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        z-index: 10;
+
+        span {
+          color: white;
+          line-height: 1;
+
+          &:first-child {
+            font-family: $font-monospace;
+            font-size: 2rem;
+            font-weight: 900;
+          }
+
+          &:last-child {
+            font-size: 1.4rem;
+            font-weight: 400;
+          }
+        }
+      }
+
+      .project__caption {
+        color: white;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        position: absolute;
+        margin: 2rem;
+
+        .project__title {
+          margin: 0 0 0.5rem;
+          font-family: $font-monospace;
+          font-size: 2.4rem;
+          line-height: 1.35;
+          text-shadow: 1px 1px rgba(black, 0.7);
+
+          > span {
+            background-color: rgba($primary, 0.8);
+          }
+        }
+
+        .project__description {
+          margin: 0;
+          line-height: 1.5;
+        }
+      }
     }
   }
 }

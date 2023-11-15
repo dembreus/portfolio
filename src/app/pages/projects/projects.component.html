@@ -1,44 +1,48 @@
 <div class="projects">
-  <div class="project-card" *ngFor="let project of projects; index as i">
-    <figure>
-      <picture class="project-card__picture">
-        <source
-          media="(max-width = 599.99px)"
-          srcset="{{ project.referenceImage }}"
-        />
-        <source
-          media="(min-width: 600px)"
-          srcset="{{ project.referenceImage }}"
-        />
-        <img
-          *ngIf="i === 0; else lowPriority"
-          fetchpriority="high"
-          class="project-card__img"
-          src="{{ project.referenceImage }}"
-          alt="{{ project.title }}"
-        />
-        <ng-template #lowPriority>
+  <div class="project" *ngFor="let project of projects; index as i">
+    <a target="_blank" href="{{ project.referenceUrl }}" class="project__card">
+      <figure class="project__figure">
+        <div class="date">
+          <span class="card-date-day">20</span
+          ><span class="card-date-month">APR</span>
+        </div>
+
+        <picture class="project__picture">
+          <source
+            media="(max-width = 599.99px)"
+            srcset="{{ project.referenceImage }}"
+          />
+          <source
+            media="(min-width: 600px)"
+            srcset="{{ project.referenceImage }}"
+          />
           <img
-            fetchpriority="low"
-            class="project-card__img"
+            *ngIf="i === 0; else lowPriority"
+            fetchpriority="high"
+            class="project__img"
             src="{{ project.referenceImage }}"
             alt="{{ project.title }}"
           />
-        </ng-template>
-      </picture>
-    </figure>
-    <div class="project-card__title">{{ project.title }}</div>
-    <div class="description-section">
-      <div class="project-card__description">{{ project.description }}</div>
-      <button class="project-card__btn">
-        <a
-          target="_blank"
-          href="{{ project.referenceUrl }}"
-          class="project-card__link"
-          >View source code</a
-        >
-      </button>
-    </div>
+          <ng-template #lowPriority>
+            <img
+              fetchpriority="low"
+              class="project__img"
+              src="{{ project.referenceImage }}"
+              alt="{{ project.title }}"
+            />
+          </ng-template>
+        </picture>
+
+        <figcaption class="project__caption">
+          <h4 class="project__title">
+            <span>{{ project.title }}</span>
+          </h4>
+          <p class="project__description">
+            {{ project.description }}
+          </p>
+        </figcaption>
+      </figure>
+    </a>
   </div>
 </div>
 <router-outlet></router-outlet>
